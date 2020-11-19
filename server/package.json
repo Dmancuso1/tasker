@@ -1,0 +1,12 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "small scale live inventory tracker with tickets",
+  "main": "index.js",
+  "repository": "https://github.com/Dmancuso1/tasker",
+  "author": "Dane Mancuso",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

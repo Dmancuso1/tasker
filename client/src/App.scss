@@ -1,0 +1,68 @@
+/* @import "~bootstrap/scss/bootstrap"; */
+@import "custom-styles"; 
+
+.bg--img--wrap {
+  z-index: -11;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  img {
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    z-index: -10;
+    opacity: 0.5;
+    background-repeat: repeat-y
+  }
+}
+
+
+button {
+  box-shadow: 1px 1px 4px rgb(233, 233, 233);
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem .5rem;
+
+  button {
+    margin: 0;
+  }
+
+  .logo--text {
+    color: rgb(119, 119, 119);
+  }
+}
+
+
+
+
+
+.fa-bars {
+  color: #ffffff;
+}
+.fa-sync-alt {
+  align-self: center;
+}
+
+
+// Accordion wrapper
+
+.accordion--wrapper {
+  margin: auto;
+  padding: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 944px) {
+  .accordion--wrapper {
+    padding: 0rem 1rem;
+  }
+}
+

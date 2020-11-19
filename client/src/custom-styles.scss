@@ -1,0 +1,11 @@
+//custom-styles.scss 
+
+
+
+$theme-colors: (
+    // "info": blueviolet,
+    // "danger": orangered
+);
+
+// must be imported last
+@import "~bootstrap/scss/bootstrap";

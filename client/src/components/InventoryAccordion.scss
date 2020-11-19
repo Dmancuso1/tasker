@@ -1,0 +1,171 @@
+#master--list--wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+}
+
+section.cards--container {
+  padding: 1.5rem 1.5rem;
+  background-color: #c7c7c7;
+  /* width: 75%; */
+  /* margin: 0 auto; */
+}
+
+.card--wrapper {
+  position: relative;
+  margin-bottom: 0.75rem;
+  border-radius: .33rem;
+  border-left: .5rem solid rgb(255, 165, 0);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(255, 248, 220, 1);
+  box-shadow: 5px 5px 8px rgb(136, 136, 136);
+
+  i, .card-user {
+    position: absolute;
+  }
+
+  i.fa-edit {
+    color: #000;
+    top: 0.5rem;
+    right: 2rem;
+    opacity: 0.4;
+  }
+  i.fa-edit:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+
+  .card-user {
+    display: flex;
+    align-items: center;
+    font-size: .75rem;
+    top: 0.25rem;
+    left: 1.25rem;
+
+    p {
+      margin-left: 0.75rem;
+    }
+
+    i.fa-circle {
+      margin: auto;
+      font-size: .6rem;
+      color: #32CD32;
+      text-align: center;
+    }
+  }
+}
+
+
+.inactive--box {
+  background-color: rgb(255, 248, 220, .5);
+  color: #878787;
+  border-color: rgb(255, 165, 0, .4);
+  box-shadow: 5px 5px 8px rgb(136, 136, 136, 0.5);
+}
+
+
+table {
+  /* padding-left: 3rem; */
+  margin: 0 auto;
+}
+
+
+#table1 {
+  padding-top: .5rem;
+}
+
+#table2 {
+  padding-bottom: .5rem;
+}
+
+.card--wrapper td {
+  // border: 1px solid #000; 
+  width: 10rem;
+  padding: 0rem .25rem;
+}
+
+.col--label, .col--value {
+  font-size: .8rem;
+}
+.col--label {
+  font-weight: 300; 
+  text-align: right;
+}
+.col--value {
+  text-align: left;
+}
+
+section.header--btns {
+  display: flex;
+}
+
+section.header--btns button {
+  margin: 0.25rem 0rem 0.5rem 0.5rem;
+}
+
+#footer--btns {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#add--skid--btn {
+  margin: .5rem 1.25rem;
+
+  button {
+    margin: 0;
+  }
+}
+
+
+@media screen and (max-width: 812px) {
+  #master--list--wrapper {
+    width: 100%;
+    padding: 1.5rem 0rem;
+  }
+}
+
+
+/*Bootstrap nav link*/
+
+.nav-link {
+  padding-top: 0;
+}
+
+
+
+/* stlye for jQuery drop-down */
+
+
+#skid--list, #box--list {
+  padding: 5px;
+  text-align: center;
+  /* border: solid 1px #c3c3c3; */
+}
+
+#skid--list {
+  font-weight: 700;
+  background-color: lavender;
+  border-radius: .125rem;
+}
+
+#skid--list:hover {
+  cursor: pointer;
+}
+
+#box--list {
+  /* padding: 50px; */
+  display: none;
+}
+
+
+
+@media screen and (min-width: 944px) {
+  #table2 {
+    padding-top: .5rem;
+  }
+  #table1 {
+    padding-bottom: .5rem;
+  }
+}
