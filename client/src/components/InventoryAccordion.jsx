@@ -115,7 +115,7 @@ function InventoryAccordion() {
         </Accordion>
       </section>
       <section id="footer--btns">
-        <AddSkidModal />
+        <AddSkidModal test="test"/>
       </section>
 
     </>

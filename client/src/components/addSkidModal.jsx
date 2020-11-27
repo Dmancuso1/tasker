@@ -14,7 +14,7 @@ import {
 
 function AddSkidModal(props) {
   const [show, setShow] = useState(false);
-
+  console.log('props from addSkidModal ', props)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
