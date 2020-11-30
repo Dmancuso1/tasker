@@ -1,5 +1,8 @@
 # Description
 Start: `yarn run nodemon` or `yarn start`
+
+start postgres via docker
+
 # Tools
 `nodemon`
 `bodyparser`
