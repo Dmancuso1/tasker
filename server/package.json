@@ -16,6 +16,8 @@
   },
   "scripts": {
     "start": "node ./index.js",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "migrate": "npx knex migrate:latest",
+    "rollback": "knex migrate:rollback"
   }
 }
