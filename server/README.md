@@ -6,8 +6,8 @@ start postgres via docker
 # Tools
 `nodemon`
 `bodyparser`
-``
-``
+`knex`
+`pg`
 ``
 # SERVER TODO
 ```
