@@ -5,5 +5,6 @@ module.exports = {
   address: 'address',
   supplier: 'supplier',
   skid: 'skid',
-  customer: 'customer'
+  customer: 'customer',
+  order: 'order'
 }
