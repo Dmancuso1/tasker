@@ -3,5 +3,7 @@ module.exports = {
   country: 'country',
   specie: 'specie',
   address: 'address',
-  supplier: 'supplier'
+  supplier: 'supplier',
+  skid: 'skid',
+  customer: 'customer'
 }

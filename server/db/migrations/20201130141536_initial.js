@@ -17,11 +17,11 @@ function addDefaultColumns(table) {
 
 function references(table, foreignTableName) {
   table
-  .integer(`${foreignTableName}_id`)
-  .unsigned()
-  .references('id')
-  .inTable(foreignTableName)
-  .onDelete('cascade');
+    .integer(`${foreignTableName}_id`)
+    .unsigned()
+    .references('id')
+    .inTable(foreignTableName)
+    .onDelete('cascade');
 }
 
 
@@ -66,15 +66,25 @@ exports.up = async (knex) => {
     table.string('website_url', 2000).unique();
     table.string('description', 1000);
     references(table, tableNames.address)
-  })
+  });
+  await knex.schema.createTable(tableNames.skid, (table) => {
+    table.increments().notNullable();
+    table.string('name').notNullable();
+    table.integer('rank_lot_number').notNullable();
+    table.string('country_of_origin', 50).notNullable();
+    table.integer('some_number').notNullable();
+    table.date('arrival_date').notNullable();
+    table.integer('rank_qc_report').notNullable();
+    table.boolean('complete').notNullable();
+    references(table, tableNames.supplier);
+  });
 };
-
-
 
 
 
 exports.down = async (knex) => {
   await Promise.all([
+    tableNames.skid,
     tableNames.supplier,
     tableNames.address,
     tableNames.user,
