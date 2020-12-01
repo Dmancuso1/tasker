@@ -78,6 +78,14 @@ exports.up = async (knex) => {
     table.boolean('complete').notNullable();
     references(table, tableNames.supplier);
   });
+  await knex.schema.createTable(tableNames.customer, (table) => {
+    table.increments().notNullable();
+    table.string('name').notNullable().unique();
+    table.string('email', 254).notNullable().unique();
+    table.string('website_url', 2000).unique();
+    table.string('description', 1000);
+    references(table, tableNames.address)
+  });
 };
 
 
@@ -85,6 +93,7 @@ exports.up = async (knex) => {
 exports.down = async (knex) => {
   await Promise.all([
     tableNames.skid,
+    tableNames.customer,
     tableNames.supplier,
     tableNames.address,
     tableNames.user,
