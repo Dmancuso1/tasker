@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  font-size: 16px;
+  position: relative;
+  /* font-family: 'Bitter', serif; */
+  width: 100%;
+  /* background-color: burlywood; */
+  -webkit-print-color-adjust: exact;
+  box-sizing: border-box;
+  /* height: 90mm;
+  width: 50mm; */
+  display: block;
+  /* margin: 50px; */
+  overflow: hidden;
+}
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+aside {
+  border: 1px solid black;
+  min-height: 5rem;
+}
+
+aside > h1, h2, h3, h4, h5, h6 {
+  padding:.125rem .5rem;
+}
+
+article >  h2, h3, h4, h5, h6 {
+  padding:.125rem .5rem;
+}
+aside.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 18rem;
+  text-align: center;
+}
+aside.left h1 {
+  font-size: 175%;
+} 
+aside.right {
+  width: 24rem;
+  text-align: center;
+}
+
+/* type of doc area */
+.type--of--doc {
+  text-align: center;
+  padding: 1rem 0rem;
+}
+/* */
+
+/* shipping info area  */
+  section.address--info {
+    min-height: 10.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .left--shipper {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pickup--date h4, .order--ref h4 {
+    text-align: center;
+  }
+
+  .pickup--date, .order--ref {
+    border: 1px solid black;
+
+  } 
+
+
+  .right--consignee {
+    justify-content: space-between;
+    min-width: 18rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ship--to, .ship--via {
+    border: 1px solid black;
+  }
+/*  */
+
+
+/* TABLE */
+
+.table--container {
+  overflow: scroll;
+  width: 100%;
+  padding: 1rem 0rem;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.tg  {
+  border-collapse:collapse;
+  border-spacing:0;
+  width: 100%;
+}
+.tg td{
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  overflow:hidden;
+  padding:.125rem .5rem;
+  word-break:normal;
+}
+.tg th{
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  padding:.125rem .5rem;
+  word-break:normal;
+}
+.tg th.noborder--cell {
+  border: none;
+}
+.tg th.first--cell, .tg td.first--cell {
+  width: 18rem;
+}
+.tg tr.last--row {
+  background-color: #e6e6e6;
+}
+.tg .tg-0lax{
+  text-align:left;
+  vertical-align:top
+}
+/*  */
+
+/* Driver and notes details  */
+.notes--details {
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+.left--driver--notes {
+  display: flex;
+  flex-direction: column;
+}
+.driver--table {
+  margin-top: 1rem;
+  text-align: right;
+}
+.driver--table td {
+  padding: .5rem 0;
+}
+.right--driver--notes {
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+}
+.pallet--info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.stamp--area {
+  margin-top: 1rem;
+  height: 15rem;
+  border: 1px dashed black;
+  text-align: center;
+}
+.stamp--area h4 {
+  padding-top: 3rem;
+}
+/*  */
+
+/* Footer */
+  footer.disclaimer {
+    text-align: center;
+  }
+  footer.disclaimer hr {
+    margin: .5rem auto .5rem auto;
+    width: 75%;
+  }
+/*  */
+
+
+/* PRINTING AREA INFO */
+@media print {
+  /* .page {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+  } */
+
+  @page {
+    /* size: 216mm 297mm; portrait */
+    /* you can also specify margins here: */
+    /* margin: 25mm; */
+    /* margin-right: 45mm; for compatibility with both A4 and Letter */
+  }
+
+  .page--break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+
+}
+

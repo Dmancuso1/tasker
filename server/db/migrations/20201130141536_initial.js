@@ -100,12 +100,34 @@ exports.up = async (knex) => {
     references(table, tableNames.customer);
     addDefaultColumns(table);
   });
+  await knex.schema.createTable(tableNames.box, (table) => {
+    table.increments().notNullable();
+    table.integer('box_number').notNullable();
+    table.string('size', 50).notNullable();
+    table.integer('weight').notNullable(); 
+    table.integer('price'); 
+    table.date('ship_date');
+    table.string('carrier', 100);
+    table.string('case', 100);
+    table.string('lot', 100);
+    table.date('invoice_date');
+    references(table, tableNames.skid);
+    references(table, tableNames.user);
+    references(table, tableNames.customer);
+    references(table, tableNames.order);
+    references(table, tableNames.specie);
+  });
+
+
+
+
 };
 
 
 
 exports.down = async (knex) => {
   await Promise.all([
+    tableNames.box,
     tableNames.order,
     tableNames.skid,
     tableNames.customer,

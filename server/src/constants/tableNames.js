@@ -6,5 +6,6 @@ module.exports = {
   supplier: 'supplier',
   skid: 'skid',
   customer: 'customer',
-  order: 'order'
+  order: 'order',
+  box: 'box'
 }
