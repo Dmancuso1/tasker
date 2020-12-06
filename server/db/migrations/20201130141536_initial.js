@@ -5,13 +5,12 @@ const Knex = require('knex');
 const tableNames = require('../../src/constants/tableNames');
 
 /**
- * 
  * @param {Knex} knex 
  */
 
 
 function addDefaultColumns(table) {
-  table.timestamps(false, true);
+  table.timestamps(false, true); // creates: created@ and updated@ fields.
   table.datetime('deleted_at');
 }
 
