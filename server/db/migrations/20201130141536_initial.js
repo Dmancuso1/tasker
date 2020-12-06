@@ -39,6 +39,7 @@ exports.up = async (knex) => {
   await knex.schema.createTable(tableNames.country, (table) => {
     table.increments().notNullable();
     table.string('name').notNullable().unique();
+    table.string('code').notNullable().unique();
     addDefaultColumns(table);
   });
   await knex.schema.createTable(tableNames.specie, (table) => {
