@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-  res.send('🌴🌴 LIVE INVENTORY APP 🌴🌴')
+  res.json({ "message: ": "🌴🌴 LIVE INVENTORY APP 🌴🌴"})
 })
 
 
