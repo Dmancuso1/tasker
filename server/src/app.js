@@ -6,6 +6,7 @@ const helmet = require('helmet'); // secure HTTP headers
 const routes = require('../routes');
 // const bodyParser = require('body-parser');
 
+// custom middleware for error logging
 const middlewares = require('./middlewares')
 
 const app = express()
