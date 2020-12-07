@@ -21,24 +21,3 @@ Start: `yarn run nodemon` or `yarn start`
 `bodyparser`
 `knex`
 `pg`
-``
-# SERVER TODO
-```
-
-[] ITEM
-
-[] ITEM
-
-[] ITEM
-
-[] ITEM
-
-[] ITEM
-
-[] ITEM
-
-[] ITEM
-
-[] ITEM
-
-```

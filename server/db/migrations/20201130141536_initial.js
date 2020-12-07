@@ -4,6 +4,7 @@
 const Knex = require('knex');
 const tableNames = require('../../src/constants/tableNames');
 
+
 /**
  * @param {Knex} knex 
  */
@@ -14,13 +15,17 @@ function addDefaultColumns(table) {
   table.datetime('deleted_at');
 }
 
-function references(table, foreignTableName) {
-  table
+function references(table, foreignTableName, notNullable = true) {
+  const definition = table
     .integer(`${foreignTableName}_id`)
     .unsigned()
     .references('id')
     .inTable(foreignTableName)
     .onDelete('cascade');
+
+    if(notNullable) {
+      definition.notNullable();
+    }
 }
 
 
@@ -112,9 +117,9 @@ exports.up = async (knex) => {
     table.string('lot', 100);
     table.date('invoice_date');
     references(table, tableNames.skid);
-    references(table, tableNames.user);
-    references(table, tableNames.customer);
-    references(table, tableNames.order);
+    references(table, tableNames.user, false);
+    references(table, tableNames.customer, false);
+    references(table, tableNames.order, false);
     references(table, tableNames.specie);
   });
 
