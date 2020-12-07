@@ -1,6 +1,9 @@
 
 const bcrypt = require('bcrypt');
 const Knex = require('knex');
+const { v4: uuidv4 } = require('uuid');
+// impliment with:  uuidv4()
+
 const countries = require('../src/constants/countries')
 
 const tableNames = require('../src/constants/tableNames');
@@ -14,7 +17,6 @@ const orderedTableNames = require('../src/constants/orderedTableNames');
 // run: npm run seed or yarn run seed
 
 exports.seed = async (knex) => {
-
   // Deletes ALL existing entries
   await orderedTableNames
     .reduce(async (promise, table_name) => {
@@ -25,6 +27,7 @@ exports.seed = async (knex) => {
 
   //creating a user object for seeding. ID is auto generated
   const user = {
+    id: 10,
     first_name: "Dane",
     last_name: "Mancuso",
     email: "danegmancuso@gmail.com",
