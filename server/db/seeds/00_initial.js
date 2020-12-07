@@ -4,10 +4,10 @@ const Knex = require('knex');
 const { v4: uuidv4 } = require('uuid');
 // impliment with:  uuidv4()
 
-const countries = require('../src/constants/countries')
+const countries = require('../../src/constants/countries')
 
-const tableNames = require('../src/constants/tableNames');
-const orderedTableNames = require('../src/constants/orderedTableNames');
+const tableNames = require('../../src/constants/tableNames');
+const orderedTableNames = require('../../src/constants/orderedTableNames');
 
 /**
  * @param {Knex} knex 
