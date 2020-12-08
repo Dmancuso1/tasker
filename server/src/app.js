@@ -5,7 +5,9 @@ const compression = require('compression');
 const helmet = require('helmet'); // secure HTTP headers
 // const bodyParser = require('body-parser');
 
+
 const api = require('./api');
+const project = require('./constants/project');
 
 
 // custom middleware for error logging
@@ -20,9 +22,8 @@ app.use(helmet());
 
 
 app.get('/', (req, res) => {
-  res.json({ "message" : "🌴🌴 LIVE INVENTORY APP 🌴🌴"})
+  res.json({ message : project.message})
 })
-
 
 
 // mount for routes in api dir
@@ -31,7 +32,6 @@ app.use('/api/v1', api);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
-
 
 
 module.exports = app

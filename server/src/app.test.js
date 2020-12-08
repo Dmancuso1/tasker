@@ -1,6 +1,7 @@
 const supertest = require('supertest');
 
 const app = require('./app');
+const project = require('./constants/project')
 
 describe('GET /', () => {
   it('should respond with a message', async () => {
@@ -10,6 +11,6 @@ describe('GET /', () => {
       .expect(200) // from supertest lib
 
     expect(response.body.message)
-      .toEqual('🌴🌴 LIVE INVENTORY APP 🌴🌴')
+      .toEqual(project.message)
   })
 }) 
