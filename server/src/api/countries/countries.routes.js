@@ -16,19 +16,13 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
-    if (isNaN(id)) {
-      const error = new Error('invalid ID');
-      res.status('422'); // unprocessable entitiy
-      throw error;
-    } else {
-      const country = await queries.get(req.params.id)
-      if (country) {
-        return res.json(country)
-      };
-      return next(); // throws an error 404
-    }
+    const country = await queries.get(parseInt(id, 10) || 0)
+    if (country) {
+      return res.json(country)
+    };
+    return next(); // throws an error 404
   } catch (error) {
-    next(error); // next() lets us pass down the error .
+    return next(error); // next() lets us pass down the error .
   }
 });
 

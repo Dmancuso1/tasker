@@ -10,18 +10,16 @@ const fields = ['id', 'name', 'code'];
 module.exports = {
   // we can use this find function and use elsewhere
   find() {
-    // TODO: filter by country
     // TODO: make a join to address table
     return db(tableNames.country).select(fields); // like SELECT * from tableNames.tablename
   },
 
-  // TODO: get by id
+
   async get(id) {
-    const [country] = await db(tableNames.country)
+    return db(tableNames.country)
       .select(fields)
       .where({
         id,
-      });  
-      return country
+      }).first();  // limits to 1 and returns that single item.
   },
 }; 
