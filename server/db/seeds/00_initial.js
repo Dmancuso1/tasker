@@ -40,9 +40,11 @@ exports.seed = async (knex) => {
     .insert(user)
     .returning('*');  
 
-  console.log('User Created', {
-    createdUser,
-  })
+  if (process.env.NODE_END !== 'test') {
+    console.log('User Created', {
+      createdUser,
+    })
+  }
 
   // seed COUNTRY table (imported)
   await knex(tableNames.country)

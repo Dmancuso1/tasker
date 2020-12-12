@@ -9,8 +9,8 @@ describe('GET /api/v1/countries', () => {
     .get('/api/v1/countries')
     .expect('Content-Type', /json/) 
     .expect(200)
-
-    expect(response.body).toEqual([])
+    // TODO: make this test do more than just check length of array
+    expect(response.body.length).toBeGreaterThan(0);
 
   });
 });
