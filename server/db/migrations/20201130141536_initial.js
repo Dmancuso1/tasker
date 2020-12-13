@@ -3,31 +3,22 @@
 
 const Knex = require('knex');
 const tableNames = require('../../src/constants/tableNames');
+const  {
+  addDefaultColumns,
+  references
+} = require('../../src/lib/tableUtils')
+
 
 /**
- * 
  * @param {Knex} knex 
  */
 
 
-function addDefaultColumns(table) {
-  table.timestamps(false, true);
-  table.datetime('deleted_at');
-}
+// --
 
-function references(table, foreignTableName) {
-  table
-    .integer(`${foreignTableName}_id`)
-    .unsigned()
-    .references('id')
-    .inTable(foreignTableName)
-    .onDelete('cascade');
-}
-
-
-// ----------------------------------------------------------
 
 exports.up = async (knex) => {
+  // user
   await knex.schema.createTable(tableNames.user, (table) => {
     table.increments().notNullable();
     table.string('email', 254).notNullable().unique();
@@ -37,17 +28,21 @@ exports.up = async (knex) => {
     table.datetime('last_login');
     addDefaultColumns(table);
   });
+  // country
   await knex.schema.createTable(tableNames.country, (table) => {
     table.increments().notNullable();
     table.string('name').notNullable().unique();
+    table.string('code').notNullable().unique();
     addDefaultColumns(table);
   });
+  // specie
   await knex.schema.createTable(tableNames.specie, (table) => {
     table.increments().notNullable();
     table.string('name').notNullable().unique();
     table.string('description', 1000);
     addDefaultColumns(table);
   });
+  // address
   await knex.schema.createTable(tableNames.address, (table) => {
     table.increments().notNullable();
     table.string('street_address_1', 50).notNullable();
@@ -61,6 +56,7 @@ exports.up = async (knex) => {
     addDefaultColumns(table);
   })
   await knex.schema.createTable(tableNames.supplier, (table) => {
+    // supplier
     table.increments().notNullable();
     table.string('name').notNullable().unique();
     table.string('email', 254).notNullable().unique();
@@ -69,6 +65,7 @@ exports.up = async (knex) => {
     references(table, tableNames.address);
     addDefaultColumns(table);
   });
+  // skid
   await knex.schema.createTable(tableNames.skid, (table) => {
     table.increments().notNullable();
     table.string('name').notNullable();
@@ -81,6 +78,7 @@ exports.up = async (knex) => {
     references(table, tableNames.supplier);
     addDefaultColumns(table);
   });
+  // customer
   await knex.schema.createTable(tableNames.customer, (table) => {
     table.increments().notNullable();
     table.string('name').notNullable().unique();
@@ -90,6 +88,7 @@ exports.up = async (knex) => {
     references(table, tableNames.address);
     addDefaultColumns(table);
   });
+  // order
   await knex.schema.createTable(tableNames.order, (table) => {
     table.increments().notNullable();
     table.integer('order_number').notNullable();
@@ -100,29 +99,30 @@ exports.up = async (knex) => {
     references(table, tableNames.customer);
     addDefaultColumns(table);
   });
+  // box
   await knex.schema.createTable(tableNames.box, (table) => {
     table.increments().notNullable();
     table.integer('box_number').notNullable();
     table.string('size', 50).notNullable();
-    table.integer('weight').notNullable(); 
-    table.integer('price'); 
+    table.integer('weight').notNullable();
+    table.integer('price');
     table.date('ship_date');
     table.string('carrier', 100);
     table.string('case', 100);
     table.string('lot', 100);
     table.date('invoice_date');
     references(table, tableNames.skid);
-    references(table, tableNames.user);
-    references(table, tableNames.customer);
-    references(table, tableNames.order);
+    references(table, tableNames.user, false);
+    references(table, tableNames.customer, false);
+    references(table, tableNames.order, false);
     references(table, tableNames.specie);
   });
 
 
-
-
 };
 
+
+// --
 
 
 exports.down = async (knex) => {
