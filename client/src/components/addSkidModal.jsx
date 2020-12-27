@@ -28,8 +28,8 @@ function AddSkidModal(props) {
         show={show}
         onHide={handleClose}
         backdrop="static"
-        keyboard={false}
-      >
+        keyboard={false}>
+
         <Modal.Header closeButton>
           <Modal.Title><h2>Add Skid</h2></Modal.Title>
         </Modal.Header>
@@ -39,39 +39,39 @@ function AddSkidModal(props) {
             <tbody>
               <tr>
                 <td>Box Quantity</td>
-                <td><input type="number" placeholder=""/></td>
+                <td><input type="number" placeholder="" /></td>
               </tr>
               <tr>
                 <td>Supplier</td>
-                <td><input type="text" placeholder=""/></td>
+                <td><input type="text" placeholder="" /></td>
               </tr>
               <tr>
                 <td>Origin Country</td>
-                <td><input type="text" placeholder=""/></td>
+                <td><input type="text" placeholder="" /></td>
               </tr>
               <tr>
                 <td>Some Number</td>
-                <td><input type="text" placeholder=""/></td>
+                <td><input type="text" placeholder="" /></td>
               </tr>
               <tr>
                 <td>Rank Lot#</td>
-                <td><input type="text" placeholder=""/></td>
+                <td><input type="text" placeholder="" /></td>
               </tr>
               <tr>
                 <td>Arrival Date</td>
-                <td><input type="date" placeholder=""/></td>
+                <td><input type="date" placeholder="" /></td>
               </tr>
               <tr>
                 <td>Rank QC Report</td>
-                <td><input type="text" placeholder=""/></td>
+                <td><input type="text" placeholder="" /></td>
               </tr>
             </tbody>
           </table>
 
-
-
         </Modal.Body>
+
         <Modal.Footer>
+
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
@@ -79,7 +79,9 @@ function AddSkidModal(props) {
             Create Skid
             {/* Use "Save Changes" for the edit skid component */}
           </Button>
+          
         </Modal.Footer>
+
       </Modal>
     </>
   );

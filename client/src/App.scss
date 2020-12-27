@@ -14,9 +14,45 @@
     object-fit: cover;
     height: 100%;
     z-index: -10;
-    opacity: 0.5;
+    opacity: 0.9;
     background-repeat: repeat-y
   }
+}
+
+.nav_drop_down_wrapper {
+  display: none;
+  border: 1px solid #b9b9b9;
+  height: 80px;
+  margin: 0 0.5rem;
+  z-index: 10;
+  width: 150px;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  // padding: 2rem;
+  // top: 0;
+  right: 0;
+  
+  ul {
+    // margin: 0 .5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+    color: #000000;
+  }
+
+  li {
+    // background-color: rgb(119, 109, 14);
+    a {
+      color: #000;
+    }
+  }
+}
+
+li:hover {
+  background-color: #dbdbdb;
+  cursor: pointer;
 }
 
 
